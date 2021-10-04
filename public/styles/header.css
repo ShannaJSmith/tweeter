@@ -1,0 +1,12 @@
+header {
+  height: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  background-color:#5c9ce0;
+  background-image: url(../images/fabric-of-squares.png);
+}
+
