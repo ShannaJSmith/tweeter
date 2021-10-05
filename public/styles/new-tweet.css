@@ -1,25 +1,11 @@
 .new-tweet {
-  width: 100vw;
+  width: 100%;
   max-width: 90%;
   background-color: transparent;
   padding: 25px;
 }
 
-.tweet-top {
-  display: flex;
-  flex-direction: column;
-  width: 1000px;
-  border-bottom: 2px black;
-}
-
-.tweet-bottom {
-  display: flex;
-  flex-direction: column;
-  align-items:flex-start;
-
-}
-
-label {
+label {   /* maybe give id to "what are you humming about? later to specify more*/
   display: flex;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
@@ -30,16 +16,24 @@ textarea {
   outline: none;
   border: none;
   resize: none;
-  border-bottom: solid maroon;
+  border-bottom: solid #656565;
+  width: 100%;
+  height: 50px;
+}
+
+.tweet-button-counter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: 'Bungee';
+  margin-top: 15px;
 }
 
 button {
-  display: flex;
   font-family: 'Bungee';
   color: white;
   background-color: #4056A1;
   border: none;
-  margin: 10px
 }
 
 button:hover {
