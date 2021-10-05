@@ -9,3 +9,7 @@ header {
   background-image: url(../images/fabric-of-squares.png);
 }
 
+h2 {
+  margin: 0
+}
+
