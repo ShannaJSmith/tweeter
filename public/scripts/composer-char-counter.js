@@ -4,7 +4,9 @@ $(document).ready(function() {
     let counter = 140 - count;
     $('.tweet-button-counter').children('.counter').text(counter);
     if (counter < 0) {
-      $('.tweet-button-counter').children('.counter').css('color', 'red');
+      $('.tweet-button-counter').children('.counter').addClass('red');
+      //$('.tweet-button-counter').children('.counter').css('color', 'red'); <-changing colour just within the .js file
     }
   });
+  $('.tweet-button-counter').children('.counter').removeClass('red');
 });

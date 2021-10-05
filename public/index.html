@@ -58,17 +58,23 @@
     <section class="new-tweet">
       <h2>Compose Tweet</h2>
       <form method="POST" action="/tweets/">
-
         <div class="tweet-top">
         <label for="tweet-text">What are you humming about?</label>
         <textarea name="text" id="tweet-text"></textarea>
         </div>
-
         <div class="tweet-button-counter">
           <button type="submit">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
         </div>
       </form>
+    </section>
+    <section class="all-tweets">
+      <div class="tweet-container">
+        <article class="article-tweets">
+          <header class="article.tweet-header">Newton</header>
+          <footer class="article.tweet-footer">10 days ago</footer>
+        </article>
+      </div>
     </section>
   </main>
   </body>

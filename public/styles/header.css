@@ -9,6 +9,11 @@ header {
   background-image: url(../images/fabric-of-squares.png);
 }
 
+div {
+  display: flex;
+  align-self:center;
+}
+
 h2 {
   margin: 0
 }

@@ -32,15 +32,3 @@ html {
    align-items: center;
    background-color: #f4f1ec;
  }
-
- h2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;   
- }
-
- p {
-  display: flex;
-  justify-content: center;
-  align-items: center;   
- }
