@@ -1,7 +1,7 @@
 #posted-tweets {
-  width: 100%;
   margin-top: 40px;
   margin-bottom: 20px;
+  width: 100%;
 }
 
 .article-tweets {
@@ -28,19 +28,17 @@
     width: 80px;
   }
 
-
   .username {
-    padding-right: 10px;
     color: lightgrey;
-
+    padding-right: 10px;
   }
 
   .tweet-text {
+    border-bottom: 3px #656565 solid;
     margin-left: 25px;
     margin-right: 25px;
-    padding-bottom: 25px;
-    border-bottom: 3px #656565 solid;
     margin-bottom: 0;
+    padding-bottom: 25px;
   }
 
   footer {
@@ -50,9 +48,9 @@
   }
 
 .date {
+  font-size: 17px;
   margin-left: 25px;
   margin-top: 10px;
-  font-size: 17px;
 }
 
 .icons {

@@ -1,12 +1,12 @@
 nav {
-  height: 120px;
-  width: 100%;
-  background-color: #4056A1;
-  color: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  height: 120px;
   padding: 0 1.5em;
+  width: 100%;
   /* places nav infront of header */
   position: fixed;
   top: 0; 
@@ -20,8 +20,8 @@ span {
 
 .nav-container {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
   padding: 0 1.5em;
 }
 
