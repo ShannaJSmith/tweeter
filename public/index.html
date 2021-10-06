@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/posted-tweet.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -43,7 +44,7 @@
       </div>
     </nav>
      <!-- Header -->
-    <header>
+    <header class="blue-background">
       <div>
           <img src="/images/profile-hex.png"> 
       </div>
@@ -67,15 +68,29 @@
           <output name="counter" class="counter" for="tweet-text">140</output>
         </div>
       </form>
-    </section>
-    <section class="all-tweets">
-      <div class="tweet-container">
+      <section id="posted-tweets">
         <article class="article-tweets">
-          <header class="article.tweet-header">Newton</header>
-          <footer class="article.tweet-footer">10 days ago</footer>
+          <header class="article-tweet-header">
+            <div class="user-profile">
+              <img id="newton-icon" src="https://i.imgur.com/73hZDYK.png"/>
+            <h5>Newton</h5>
+          </div>
+          <div class="username">
+            <h5>@SirIssac</h5>
+          </div>
+        </header>
+            <p class="tweet-text">If I have seen further it is by standing on the shoulders of giants</p>
+          <footer>
+            <div><p class="date">10 days ago</p></div>
+            <div class="icons">
+            <i class="fas fa-flag" id= "flag" ></i>
+            <i class="fas fa-retweet" id= "retweet"></i>
+            <i class="fas fa-heart" id="heart"></i>
+            </div>
+          </footer>
         </article>
-      </div>
-    </section>
+        </section>
+      </section>
   </main>
   </body>
 </html>
