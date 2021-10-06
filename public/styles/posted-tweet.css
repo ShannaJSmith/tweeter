@@ -1,5 +1,5 @@
 #posted-tweets {
-  width: 90%;
+  width: 100%;
   margin-top: 40px;
   margin-bottom: 20px;
 }
@@ -24,7 +24,7 @@
     margin-left: 15px;
   }
 
-  #ned-icon {
+  .user-icon {
     width: 80px;
   }
 
@@ -32,6 +32,7 @@
   .username {
     padding-right: 10px;
     color: lightgrey;
+
   }
 
   .tweet-text {
@@ -55,10 +56,13 @@
 }
 
 .icons {
-    display: flex;
-    align-self: center;
-    padding-right: 10px;
-    color: #4056A1;
+  display: flex;
+  align-self: center;
+  padding-right: 10px;
+}
+
+.icons > i {
+  color: #4056A1;
 }
 
 .icons i:hover {
