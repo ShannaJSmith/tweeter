@@ -33,7 +33,7 @@ const data = [
 // $(document).ready(function() {
 // });   <-jQuery shortform of document.ready:
 
-// returns a tweet <article> element containing the full HTML of the tweet
+// returns a tweet article element containing the full HTML of the tweet
 $(() => {
   const renderTweets = (tweets) => {
     // loops through tweets
@@ -69,11 +69,16 @@ $(() => {
     return $tweet;
   }
   renderTweets(data);
-  const $form = $('#tweet-form');
-  $form.on('submit', function(event) {
-    //stops page from reloading (the default setting of form)
-    event.preventDefault();
-    //const serializedData = $(this).serialize();
-  })
-})
 
+  $('tweet-form').submit(function (e) {
+    //stops form from refreshing
+    e.preventDefault();
+    console.log("form was submitted")
+  //   const serializedData = $(this).serialize();
+  //   console.log(serializedData)
+  //   $.post("/tweets", serializedData, (response) => {
+  //     //console.log('response:', response)
+  //   renderTweets(data);
+  // });
+})
+})

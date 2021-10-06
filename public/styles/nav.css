@@ -28,3 +28,15 @@ span {
 .nav-container p {
   margin: 0;
 }
+
+.nav-container > i {
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes floating {
+  from { transform: translate(0,  0px); }
+  65%  { transform: translate(0, 15px); }
+  to   { transform: translate(0, -0px); }    
+}
