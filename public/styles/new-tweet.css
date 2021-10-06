@@ -5,20 +5,18 @@
   width: 100%;
 }
 
-label {   /* maybe give id to "what are you humming about? later to specify more*/
+.new-tweet > h2 {
   display: flex;
-  color: burlywood;
-  font-size: 20px;
-  font-weight: bold;
-  font-family: 'Source Sans Pro', sans-serif;
+  justify-content: center;
 }
 
-textarea {
+#tweet-text {
   background: transparent;
   border: none;
   border-bottom: solid #656565;
-  color: burlywood;
-  font-size: 15px;
+  color:dimgray;
+  font-weight: bold;
+  font-size: 20px;
   font-family: 'Source Sans Pro', sans-serif;
   height: 50px;
   outline: none;

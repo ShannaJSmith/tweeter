@@ -1,4 +1,4 @@
-#posted-tweets {
+#tweets-container {
   margin-top: 40px;
   margin-bottom: 20px;
   width: 100%;
@@ -6,6 +6,7 @@
 
 .article-tweets {
     border: 3px solid #656565;
+    margin-bottom: 40px;
   }
 
 .article-tweets:hover {

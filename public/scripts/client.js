@@ -36,6 +36,8 @@ const data = [
 // returns a tweet article element containing the full HTML of the tweet
 $(() => {
   const renderTweets = (tweets) => {
+    // const tweetContainer = $("#tweets-container");
+    // tweetContainer.empty();
     // loops through tweets
     for (const tweet of tweets) {
       // calls createTweetElement for each tweet
@@ -70,9 +72,9 @@ $(() => {
   }
   renderTweets(data);
 
-  $('tweet-form').submit(function (e) {
+  $('tweet-form').submit(function (event) {
     //stops form from refreshing
-    e.preventDefault();
+    event.preventDefault();
     console.log("form was submitted")
   //   const serializedData = $(this).serialize();
   //   console.log(serializedData)
