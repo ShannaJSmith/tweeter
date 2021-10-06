@@ -9,7 +9,7 @@
   background-image: url(../images/fabric-of-squares.png);
 }
 
-div {
+header div {
   display: flex;
   align-self:center;
 }
