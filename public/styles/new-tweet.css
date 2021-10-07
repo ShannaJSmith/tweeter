@@ -5,6 +5,15 @@
   width: 100%;
 }
 
+.error-msg {
+  display: flex;
+  justify-content: center;
+  color: red;
+  font-weight: bold;
+  width: 80%;
+  margin: auto;
+}
+
 .new-tweet > h2 {
   display: flex;
   justify-content: center;
