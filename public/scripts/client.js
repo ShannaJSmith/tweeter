@@ -35,6 +35,21 @@ const data = [
 
 // returns a tweet article element containing the full HTML of the tweet
 $(() => {
+  const loadTweets = () => {
+    $.ajax ({
+      url: "/tweets",
+      method: "GET",
+      datatype: "json",
+      success: (tweets) => {
+      renderTweets(tweets)
+      },
+      error: (error) => {
+        console.log(`there is an error: ${error}`)
+      }
+    })
+  }
+  loadTweets();
+
   const renderTweets = (tweets) => {
     // const tweetContainer = $("#tweets-container");
     // tweetContainer.empty();
@@ -72,15 +87,13 @@ $(() => {
   }
   renderTweets(data);
 
-  $('tweet-form').submit(function (event) {
+  $('#tweet-form').submit(function (event) {
     //stops form from refreshing
-    event.preventDefault();
-    console.log("form was submitted")
-  //   const serializedData = $(this).serialize();
-  //   console.log(serializedData)
-  //   $.post("/tweets", serializedData, (response) => {
-  //     //console.log('response:', response)
-  //   renderTweets(data);
-  // });
-})
+    event.preventDefault()
+    const serializedData = $(this).serialize();
+    $.post("/tweets", serializedData, (response) => {
+      loadTweets()
+      console.log('response:', response);
+  });
+  })
 })
