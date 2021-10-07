@@ -36,19 +36,18 @@ const data = [
 // returns a tweet article element containing the full HTML of the tweet
 $(() => {
   const loadTweets = () => {
-    $.ajax ({
+    $.ajax({
       url: "/tweets",
       method: "GET",
       datatype: "json",
       success: (tweets) => {
-      renderTweets(tweets)
+        renderTweets(tweets);
       },
       error: (error) => {
-        console.log(`there is an error: ${error}`)
+        console.log(`there is an error: ${error}`);
       }
-    })
-  }
-  loadTweets();
+    });
+  };
 
   const renderTweets = (tweets) => {
     // const tweetContainer = $("#tweets-container");
@@ -56,11 +55,11 @@ $(() => {
     // loops through tweets
     for (const tweet of tweets) {
       // calls createTweetElement for each tweet
-      const $tweet = createTweetElement(tweet)
+      const $tweet = createTweetElement(tweet);
       // takes return value and appends it to the tweets container. "prepend" makes the latest posts come first
       $('#tweets-container').prepend($tweet);
     }
-  }
+  };
   //Creating the tweet element
   const createTweetElement = (tweet) => {
     const $tweet = `<article class="article-tweets">
@@ -82,18 +81,27 @@ $(() => {
       <i class="fas fa-heart"></i>
       </section>
     </footer>
-  </article>`
+  </article>`;
     return $tweet;
-  }
+  };
   renderTweets(data);
 
-  $('#tweet-form').submit(function (event) {
+  $('#tweet-form').submit(function(event) {
     //stops form from refreshing
-    event.preventDefault()
+    event.preventDefault();
+    //grabs the tweet text submitted on the page
     const serializedData = $(this).serialize();
+    const tweetLength = $('#tweet-text').val().length;
+    //console.log(tweetLength)
+    if (tweetLength === 0 || tweetLength === null) {
+      alert("You have to write something in your tweet!");
+    }
+    if (tweetLength > 140) {
+      return alert("Whoops! You have exceeded the tweet character limit (140 max)!");
+    }
     $.post("/tweets", serializedData, (response) => {
-      loadTweets()
+      loadTweets();
       console.log('response:', response);
+    });
   });
-  })
-})
+});
