@@ -60,6 +60,11 @@ $(() => {
       $('#tweets-container').prepend($tweet);
     }
   };
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
   //Creating the tweet element
   const createTweetElement = (tweet) => {
     const $tweet = `<article class="article-tweets">
@@ -72,7 +77,7 @@ $(() => {
       <h5>${tweet.user.handle}</h5>
     </div>
   </header>
-      <p class="tweet-text">${tweet.content.text}</p>
+      <p class="tweet-text">${escape(tweet.content.text)}</p>
     <footer>
       <p class="date">${timeago.format(tweet.created_at)}</p>
       <section class="icons">
@@ -80,7 +85,7 @@ $(() => {
       <i class="fas fa-retweet"></i>
       <i class="fas fa-heart"></i>
       </section>
-    </footer>
+    </footer> 
   </article>`;
     return $tweet;
   };
