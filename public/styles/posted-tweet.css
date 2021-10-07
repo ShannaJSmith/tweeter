@@ -19,34 +19,34 @@
   }
 
 .user-profile {
-    display: flex;
-    flex-direction: row;
-    margin-top: 15px;
-    margin-left: 15px;
-  }
+  display: flex;
+  flex-direction: row;
+  margin-top: 15px;
+  margin-left: 15px;
+}
 
-  .user-icon {
-    width: 80px;
-  }
+.user-icon {
+  width: 80px;
+}
 
-  .username {
-    color: lightgrey;
-    padding-right: 10px;
-  }
+.username {
+  color: lightgrey;
+  padding-right: 10px;
+}
 
-  .tweet-text {
-    border-bottom: 3px #656565 solid;
-    margin-left: 25px;
-    margin-right: 25px;
-    margin-bottom: 0;
-    padding-bottom: 25px;
-  }
+.tweet-text {
+  border-bottom: 3px #656565 solid;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-bottom: 0;
+  padding-bottom: 25px;
+}
 
-  footer {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
-  }
+footer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+ }
 
 .date {
   font-size: 17px;
