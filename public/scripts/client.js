@@ -35,9 +35,6 @@ const data = [
 
 // returns a tweet article element containing the full HTML of the tweet
 $(() => {
-  //hide error msg from the start
-  $(".error-msg").hide();
-
   const loadTweets = () => {
     $.ajax({
       url: "/tweets",
@@ -51,6 +48,8 @@ $(() => {
       }
     });
   };
+  //shows sample tweets
+loadTweets();
 
   const renderTweets = (tweets) => {
     // const tweetContainer = $("#tweets-container");
@@ -58,11 +57,12 @@ $(() => {
     // loops through tweets
     for (const tweet of tweets) {
       // calls createTweetElement for each tweet
-      const $tweet = createTweetElement(tweet);
+      const $tweetElement = createTweetElement(tweet);
       // takes return value and appends it to the tweets container. "prepend" makes the latest posts come first
-      $('#tweets-container').prepend($tweet);
+      $('#tweets-container').prepend($tweetElement);
     }
   };
+  //prevents harmful text inputs from altering the page
   const escape = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
@@ -82,7 +82,7 @@ $(() => {
   </header>
       <p class="tweet-text">${escape(tweet.content.text)}</p>
     <footer>
-      <p class="date">${timeago.format(tweet.created_at)}</p>
+      <p class="date">${timeago.format(new Date())}</p>
       <section class="icons">
       <i class="fas fa-flag"></i>
       <i class="fas fa-retweet"></i>
@@ -92,25 +92,41 @@ $(() => {
   </article>`;
     return $tweet;
   };
-  renderTweets(data);
 
   $('#tweet-form').submit(function(event) {
     //stops form from refreshing
     event.preventDefault();
     //grabs the tweet text submitted on the page
     const serializedData = $(this).serialize();
-    const tweetLength = $('#tweet-text').val().length;
-    //slideDown function will not occur when replacing an already existing error-msg <- FIX?
-    if (tweetLength === 0 || tweetLength === null) {
-      $(".error-msg").empty().append("⚠️ Look, you need to actually write something to tweet🙄! ⚠️").slideDown("slow");
+    const tweetLength = $('#tweet-text').val();
+    //!tweetLength.trim() captures invalid inputs of blank spaces
+    if (tweetLength.trim().length === 0 || !tweetLength.trim()) {
+      return $(".error-msg")
+      .text("⚠️ Look, you need to actually write something to tweet🙄! ⚠️")
+      .slideDown(() => {
+        setTimeout(() => {
+          $(".error-msg").slideUp();
+        }, 3000);
+      });
     }
-    if (tweetLength > 140) {
-      return $(".error-msg").empty().append("⚠️ Oops! Character limit has been exceeded! (This isn't an essay you know!) ⚠️").slideDown("slow");
-    }
+    if (tweetLength.length > 140) {
+      return $(".error-msg")
+      .text("⚠️ Oops! Character limit has been exceeded! (This isn't an essay you know!) ⚠️")
+      .slideDown(() => {
+        setTimeout(() => {
+          $(".error-msg").slideUp();
+        }, 3000);
+    })
+  }
     $.post("/tweets", serializedData, (response) => {
+      //empties input textbox after submission
+      $("#tweet-text").val('')
+      //rewrites 140 after submission
+      $('.counter').text('140')
+      //prevents tweet from posting again
+      $("#tweets-container").empty()
+      //updates new tweet on blog
       loadTweets()
-    $(".error-msg").slideUp("slow")
-      console.log('response:', response);
     });
   });
 });
