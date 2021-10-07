@@ -109,7 +109,7 @@ $(() => {
     }
     $.post("/tweets", serializedData, (response) => {
       loadTweets()
-    $(".error-msg").hide()
+    $(".error-msg").slideUp("slow")
       console.log('response:', response);
     });
   });
