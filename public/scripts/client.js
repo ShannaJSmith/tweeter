@@ -94,10 +94,10 @@ $(() => {
     const tweetLength = $('#tweet-text').val().length;
     //console.log(tweetLength)
     if (tweetLength === 0 || tweetLength === null) {
-      alert("You have to write something in your tweet!");
+      alert("Um, you have to write something in your tweet...");
     }
     if (tweetLength > 140) {
-      return alert("Whoops! You have exceeded the tweet character limit (140 max)!");
+      return alert("Oh my, you have a lot to say! Looks like you exceeded the tweet character limit (140 max)! Keep it short!");
     }
     $.post("/tweets", serializedData, (response) => {
       loadTweets();
