@@ -35,6 +35,9 @@ const data = [
 
 // returns a tweet article element containing the full HTML of the tweet
 $(() => {
+  //hide error msg from the start
+  $(".error-msg").hide();
+
   const loadTweets = () => {
     $.ajax({
       url: "/tweets",
@@ -97,15 +100,16 @@ $(() => {
     //grabs the tweet text submitted on the page
     const serializedData = $(this).serialize();
     const tweetLength = $('#tweet-text').val().length;
-    //console.log(tweetLength)
+    //slideDown function will not occur when replacing an already existing error-msg <- FIX?
     if (tweetLength === 0 || tweetLength === null) {
-      alert("Um, you have to write something in your tweet...");
+      $(".error-msg").empty().append("⚠️ Look, you need to actually write something to tweet🙄! ⚠️").slideDown("slow");
     }
     if (tweetLength > 140) {
-      return alert("Oh my, you have a lot to say! Looks like you exceeded the tweet character limit (140 max)! Keep it short!");
+      return $(".error-msg").empty().append("⚠️ Oops! Character limit has been exceeded! (This isn't an essay you know!) ⚠️").slideDown("slow");
     }
     $.post("/tweets", serializedData, (response) => {
-      loadTweets();
+      loadTweets()
+    $(".error-msg").hide()
       console.log('response:', response);
     });
   });
