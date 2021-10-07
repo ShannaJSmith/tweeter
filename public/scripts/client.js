@@ -30,9 +30,6 @@ const data = [
   },
 ];
 
-// $(document).ready(function() {
-// });   <-jQuery shortform of document.ready:
-
 // returns a tweet article element containing the full HTML of the tweet
 $(() => {
   const loadTweets = () => {
@@ -49,11 +46,9 @@ $(() => {
     });
   };
   //shows sample tweets
-loadTweets();
+  loadTweets();
 
   const renderTweets = (tweets) => {
-    // const tweetContainer = $("#tweets-container");
-    // tweetContainer.empty();
     // loops through tweets
     for (const tweet of tweets) {
       // calls createTweetElement for each tweet
@@ -63,7 +58,7 @@ loadTweets();
     }
   };
   //prevents harmful text inputs from altering the page
-  const escape = function (str) {
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
@@ -102,31 +97,31 @@ loadTweets();
     //!tweetLength.trim() captures invalid inputs of blank spaces
     if (tweetLength.trim().length === 0 || !tweetLength.trim()) {
       return $(".error-msg")
-      .text("⚠️ Look, you need to actually write something to tweet🙄! ⚠️")
-      .slideDown(() => {
-        setTimeout(() => {
-          $(".error-msg").slideUp();
-        }, 3000);
-      });
+        .text("⚠️ Look, you need to actually write something to tweet🙄! ⚠️")
+        .slideDown(() => {
+          setTimeout(() => {
+            $(".error-msg").slideUp();
+          }, 3000);
+        });
     }
     if (tweetLength.length > 140) {
       return $(".error-msg")
-      .text("⚠️ Oops! Character limit has been exceeded! (This isn't an essay you know!) ⚠️")
-      .slideDown(() => {
-        setTimeout(() => {
-          $(".error-msg").slideUp();
-        }, 3000);
-    })
-  }
+        .text("⚠️ Oops! Character limit has been exceeded! (This isn't an essay you know!) ⚠️")
+        .slideDown(() => {
+          setTimeout(() => {
+            $(".error-msg").slideUp();
+          }, 3000);
+        });
+    }
     $.post("/tweets", serializedData, (response) => {
       //empties input textbox after submission
-      $("#tweet-text").val('')
+      $("#tweet-text").val('');
       //rewrites 140 after submission
-      $('.counter').text('140')
+      $('.counter').text('140');
       //prevents tweet from posting again
-      $("#tweets-container").empty()
+      $("#tweets-container").empty();
       //updates new tweet on blog
-      loadTweets()
+      loadTweets();
     });
   });
 });

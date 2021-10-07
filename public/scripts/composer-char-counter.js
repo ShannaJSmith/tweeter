@@ -5,9 +5,8 @@ $(document).ready(function() {
     $('.tweet-button-counter').children('.counter').text(counter);
     if (counter < 0) {
       $('.tweet-button-counter').children('.counter').addClass('red');
-      //$('.tweet-button-counter').children('.counter').css('color', 'red'); <-changing colour just within the .js file
     } else {
-  $('.tweet-button-counter').children('.counter').removeClass('red');
+      $('.tweet-button-counter').children('.counter').removeClass('red');
     }
   });
 });
