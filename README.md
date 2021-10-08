@@ -4,9 +4,10 @@ Tweeter is a simple, single-page Twitter clone. Users can post a tweet with a ch
 
 ## Screenshots
 
-!["Desktop View of Tweeter"] (https://github.com/ShannaJSmith/tweeter/blob/master/docs/desktop-tweeter-view.png?raw=true)
-!["Tablet View of Tweeter"] (https://github.com/ShannaJSmith/tweeter/blob/master/docs/tablet-tweeter-view.png?raw=true)
-
+Desktop View (min-width 1024px)
+!["Screenshot of Desktop view"](https://github.com/ShannaJSmith/tweeter/blob/master/docs/desktop-tweeter-view.png?raw=true)
+Tabelet View (max-width 1024px)
+!["Screenshot of Tablet view"](https://github.com/ShannaJSmith/tweeter/blob/master/docs/tablet-tweeter-view.png?raw=true)
 
 
 ## Dependencies
