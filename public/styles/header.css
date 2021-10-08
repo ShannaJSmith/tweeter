@@ -1,13 +1,21 @@
 .lightblue-background {
   display: flex;
   align-items: center;
+  background-color:#5c9ce0;
+  background-image: url(../images/fabric-of-squares.png);
   flex-direction: column;
   height: 400px;
   justify-content: center;
-  background-color:#5c9ce0;
-  background-image: url(../images/fabric-of-squares.png);
   margin-top: 120px;
+  padding-top: 50px;
   width: 100%;  
 }
 
-
+/* Responsive design for DESKTOP */
+@media screen and (min-width: 1024px){
+  .lightblue-background {
+    width: 35vw;
+    margin-top: 200px; 
+    margin-left: 50px;  
+  }
+}

@@ -40,3 +40,11 @@ span {
   65%  { transform: translate(0, 15px); }
   to   { transform: translate(0, -0px); }    
 }
+
+/* Responsive design for DESKTOP */
+@media (max-width: 1024px) {
+  nav {
+    background-color:#5c9ce0;
+    background-image: url(../images/fabric-of-squares.png);
+  }
+}
