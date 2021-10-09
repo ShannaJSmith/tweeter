@@ -9,6 +9,13 @@ Desktop View (min-width 1024px)
 Tabelet View (max-width 1024px)
 !["Screenshot of Tablet view"](https://github.com/ShannaJSmith/tweeter/blob/master/docs/tablet-tweeter-view.png?raw=true)
 
+## Getting Started
+
+1. [Create](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) a new repository using this repository as a template.
+2. Clone your repository onto your local device.
+3. Install dependencies using the `npm install` command.
+3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
+4. Go to <http://localhost:8080/> in your browser.
 
 ## Dependencies
 
