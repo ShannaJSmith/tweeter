@@ -1,21 +1,25 @@
-.lightblue-background {
+.background {
   display: flex;
   align-items: center;
   background-color: black;
   background-image: url(../images/fabric-of-squares.png);
-  border-radius: 15px;
+  border-radius: 50%;
   flex-direction: column;
   height: 400px;
   justify-content: center;
-  margin-top: 120px;
+  margin-top: 200px;
+  margin-left: 150px;
   padding-top: 50px;
-  width: 100%;
+  width: 400px;
+}
+
+.pfp {
+  max-width: 250px;
 }
 
 .userhandle {
-  color: white;
+  color: pink;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  margin-bottom: 5px;
 }
 
 /* Responsive design for DESKTOP */
