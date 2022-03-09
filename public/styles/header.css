@@ -1,21 +1,28 @@
 .lightblue-background {
   display: flex;
   align-items: center;
-  background-color:#5c9ce0;
+  background-color: black;
   background-image: url(../images/fabric-of-squares.png);
+  border-radius: 15px;
   flex-direction: column;
   height: 400px;
   justify-content: center;
   margin-top: 120px;
   padding-top: 50px;
-  width: 100%;  
+  width: 100%;
+}
+
+.userhandle {
+  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-bottom: 5px;
 }
 
 /* Responsive design for DESKTOP */
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 1024px) {
   .lightblue-background {
     width: 35vw;
-    margin-top: 200px; 
-    margin-left: 50px;  
+    margin-top: 200px;
+    margin-left: 50px;
   }
 }
