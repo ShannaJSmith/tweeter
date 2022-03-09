@@ -50,7 +50,8 @@ span {
 /* Responsive design for DESKTOP */
 @media (max-width: 1024px) {
   nav {
-    background-color: #0072a3;
+    background-color: #807891;
     background-image: url(../images/fabric-of-squares.png);
+    color: #fe938c;
   }
 }
