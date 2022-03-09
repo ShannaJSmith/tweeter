@@ -3,7 +3,6 @@
   align-items: center;
   background-color: #0072a3;
   background-image: url(../images/fabric-of-squares.png);
-  border-radius: 50%;
   flex-direction: column;
   height: 400px;
   justify-content: center;
@@ -23,10 +22,11 @@
 }
 
 /* Responsive design for DESKTOP */
-/* @media screen and (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   .background {
-    width: 35vw;
-    margin-top: 200px;
-    margin-left: 50px;
+    /* width: 30vw; */
+    /* margin-top: 120px; */
+    /* margin-left: 50px; */
+    /* padding-top: 200px; */
   }
-} */
+}
