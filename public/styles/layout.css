@@ -6,7 +6,9 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -14,29 +16,28 @@ html {
  * Global layout stuff
  */
 
- body {
-  color: #545149;
-  background-color: #f4f1ec;
+body {
+  color: #5d576b;
+  background-color: #f1dede;
   font-size: 24px;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
- 
+
 main {
   align-items: center;
-  background-color: #f4f1ec;
   display: flex;
   flex-direction: column;
-  justify-content: center;   
+  justify-content: center;
   margin: auto;
   width: 100%;
 }
 
 /* Responsive design for DESKTOP */
-@media (min-width: 1024px){
+@media (min-width: 1024px) {
   main {
     float: right;
     margin-top: -450px;

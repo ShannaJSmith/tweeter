@@ -6,18 +6,19 @@
 }
 
 .article-tweets {
-    border: 3px solid #656565;
-    margin-bottom: 40px;
-  }
+  border: 3px solid #5d576b;
+  border-radius: 12px;
+  margin-bottom: 40px;
+}
 
 .article-tweets:hover {
-    box-shadow: 5px 5px lightgrey;
-  }
+  box-shadow: 5px 5px #fe938c;
+}
 
 .article-tweet-header {
-    display: flex;
-    justify-content: space-between;
-  }
+  display: flex;
+  justify-content: space-between;
+}
 
 .user-profile {
   display: flex;
@@ -31,7 +32,7 @@
 }
 
 .username {
-  color: lightgrey;
+  color: #5d576b;
   padding-right: 10px;
 }
 
@@ -47,7 +48,7 @@ footer {
   display: flex;
   justify-content: space-between;
   margin-bottom: 15px;
- }
+}
 
 .date {
   font-size: 17px;
@@ -62,10 +63,10 @@ footer {
 }
 
 .icons > i {
-  color: #4056A1;
+  color: #0072a3;
 }
 
 .icons i:hover {
-  color: darkgoldenrod;
+  color: #d496a7;
   cursor: pointer;
 }

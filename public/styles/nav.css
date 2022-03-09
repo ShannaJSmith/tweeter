@@ -2,20 +2,20 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #4056A1;
-  color: #FFFFFF;
+  background-color: #d496a7;
+  color: #5d576b;
   height: 120px;
   padding: 0 1.5em;
   width: 100%;
   /* places nav infront of header */
   position: fixed;
-  top: 0; 
+  top: 0;
   z-index: 9999;
 }
 
 span {
-  font-family: 'Bungee';
-  font-size: 1.5em;
+  font-family: fantasy;
+  font-size: 2.5em;
 }
 
 .nav-container {
@@ -36,15 +36,21 @@ span {
 }
 
 @keyframes floating {
-  from { transform: translate(0,  0px); }
-  65%  { transform: translate(0, 15px); }
-  to   { transform: translate(0, -0px); }    
+  from {
+    transform: translate(0, 0px);
+  }
+  65% {
+    transform: translate(0, 15px);
+  }
+  to {
+    transform: translate(0, -0px);
+  }
 }
 
 /* Responsive design for DESKTOP */
 @media (max-width: 1024px) {
   nav {
-    background-color:#5c9ce0;
+    background-color: #0072a3;
     background-image: url(../images/fabric-of-squares.png);
   }
 }
