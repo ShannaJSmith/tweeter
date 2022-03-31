@@ -28,17 +28,27 @@ body {
  */
 
 main {
-  align-items: center;
+  /* align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: auto;
-  width: 100%;
+  width: 100%; */
+  width: 90%;
+  margin: 0 auto;
 }
 
 /* Responsive design for DESKTOP */
 @media (min-width: 1024px) {
+  body {
+    display: flex;
+    justify-content: space-around;
+  }
   main {
+    width: 50%;
+    margin: 180px 0 0;
+  }
+  /* main {
     float: right;
     margin-top: -450px;
     width: 55vw;
@@ -47,5 +57,5 @@ main {
     width: 55vw;
     height: 0vw;
     margin-top: 250px;
-  }
+  } */
 }

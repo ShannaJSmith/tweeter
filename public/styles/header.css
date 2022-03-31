@@ -6,27 +6,26 @@
   flex-direction: column;
   height: 400px;
   justify-content: center;
-  margin-top: 200px;
-  margin-left: 150px;
-  padding-top: 50px;
-  width: 400px;
+  margin-top: 120px;
+  width: 100%;
 }
 
-.pfp {
+.background .pfp {
   max-width: 250px;
+  margin-top: 2em;
 }
 
-.userhandle {
+.background .userhandle {
   color: pink;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 /* Responsive design for DESKTOP */
-@media screen and (min-width: 850px) {
+@media only screen and (min-width: 1024px) {
   .background {
-    /* width: 30vw; */
-    /* margin-top: 120px; */
-    /* margin-left: 50px; */
-    /* padding-top: 200px; */
+    width: 40%;
+    max-width: 400px;
+    margin-top: 200px;
+    border-radius: 50%;
   }
 }
