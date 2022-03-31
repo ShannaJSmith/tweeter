@@ -22,7 +22,7 @@
 }
 
 /* Responsive design for DESKTOP */
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 850px) {
   .background {
     /* width: 30vw; */
     /* margin-top: 120px; */

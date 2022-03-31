@@ -34,15 +34,15 @@ const data = [
 $(() => {
   const loadTweets = () => {
     $.ajax({
-      url: "/tweets",
-      method: "GET",
-      datatype: "json",
+      url: '/tweets',
+      method: 'GET',
+      datatype: 'json',
       success: (tweets) => {
         renderTweets(tweets);
       },
       error: (error) => {
         console.log(`there is an error: ${error}`);
-      }
+      },
     });
   };
   //shows sample tweets
@@ -58,8 +58,8 @@ $(() => {
     }
   };
   //prevents harmful text inputs from altering the page
-  const escape = function(str) {
-    let div = document.createElement("div");
+  const escape = function (str) {
+    let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
@@ -77,7 +77,7 @@ $(() => {
   </header>
       <p class="tweet-text">${escape(tweet.content.text)}</p>
     <footer>
-      <p class="date">${timeago.format(new Date())}</p>
+      <p class="date">${timeago.format(tweet.created_at)}</p>
       <section class="icons">
       <i class="fas fa-flag"></i>
       <i class="fas fa-retweet"></i>
@@ -88,7 +88,7 @@ $(() => {
     return $tweet;
   };
 
-  $('#tweet-form').submit(function(event) {
+  $('#tweet-form').submit(function (event) {
     //stops form from refreshing
     event.preventDefault();
     //grabs the tweet text submitted on the page
@@ -96,30 +96,32 @@ $(() => {
     const tweetLength = $('#tweet-text').val();
     //!tweetLength.trim() captures invalid inputs of blank spaces
     if (tweetLength.trim().length === 0 || !tweetLength.trim()) {
-      return $(".error-msg")
-        .text("⚠️ Look, you need to actually write something to tweet🙄! ⚠️")
+      return $('.error-msg')
+        .text('⚠️ Look, you need to actually write something to tweet🙄! ⚠️')
         .slideDown(() => {
           setTimeout(() => {
-            $(".error-msg").slideUp();
+            $('.error-msg').slideUp();
           }, 3000);
         });
     }
     if (tweetLength.length > 140) {
-      return $(".error-msg")
-        .text("⚠️ Oops! Character limit has been exceeded! (This isn't an essay you know!) ⚠️")
+      return $('.error-msg')
+        .text(
+          "⚠️ Oops! Character limit has been exceeded! (This isn't an essay you know!) ⚠️"
+        )
         .slideDown(() => {
           setTimeout(() => {
-            $(".error-msg").slideUp();
+            $('.error-msg').slideUp();
           }, 3000);
         });
     }
-    $.post("/tweets", serializedData, (response) => {
+    $.post('/tweets', serializedData, (response) => {
       //empties input textbox after submission
-      $("#tweet-text").val('');
+      $('#tweet-text').val('');
       //rewrites 140 after submission
       $('.counter').text('140');
       //prevents tweet from posting again
-      $("#tweets-container").empty();
+      $('#tweets-container').empty();
       //updates new tweet on blog
       loadTweets();
     });
